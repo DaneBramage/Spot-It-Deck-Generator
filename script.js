@@ -50,7 +50,7 @@ function generateCard(numItems, minVal, maxVal) {
 function buildDeck(numOfCards) {
   var failedAttempts = 0;
   var cardDeck = [];
-  var newCard = generateCard(8, 0, 56); // SPOT IT! HAS 8 SYMBOLS PER CARD, 57 SYMBOLS IN LIBRARY
+  var newCard = generateCard(12, 0, 60); // SPOT IT! HAS 8 SYMBOLS PER CARD, 57 SYMBOLS IN LIBRARY
   // var cardObject = {}; // FOR DATA SET RECORDING
   // cardObject.card = newCard; // FOR DATA SET RECORDING
   // createRecord("Spot It Deck", cardObject, function(record) {console.log("card added to data set")}); // FOR DATA SET RECORDING
@@ -59,7 +59,7 @@ function buildDeck(numOfCards) {
   var newCardIsGood = false;
   while (cardDeck.length < numOfCards) {
     for (var i = 0; i < cardDeck.length; i++) {
-      if (checkArrayDupes(cardDeck[i], newCard) == 1) {
+      if (checkArrayDupes(cardDeck[i], newCard) == 2) {
         newCardIsGood = true;
       }
       else {
@@ -75,13 +75,13 @@ function buildDeck(numOfCards) {
       // var cardObject = {}; // FOR DATA SET RECORDING
       // cardObject.card = newCard; // FOR DATA SET RECORDING
     }
-    newCard = generateCard(8, 0, 56); // SPOT IT! HAS 8 SYMBOLS PER CARD, 57 SYMBOLS IN LIBRARY
+    newCard = generateCard(12, 0, 60); // SPOT IT! HAS 8 SYMBOLS PER CARD, 57 SYMBOLS IN LIBRARY
     newCardIsGood = false;
   }
   console.log("Failed attempts: " + failedAttempts);
   return cardDeck;
 }
 
-var myDeck = buildDeck(10); // SPOT IT! HAS 55 CARDS
+var myDeck = buildDeck(14); // SPOT IT! HAS 55 CARDS
 
 console.log(myDeck);
